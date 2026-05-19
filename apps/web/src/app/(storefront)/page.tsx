@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getServerApiBaseUrl } from '@/lib/serverApiUrl';
 
 export const revalidate = 0; // Fresh content every time
 
@@ -21,25 +22,39 @@ interface SpotlightPost {
 }
 
 async function getNewArrivals(): Promise<Product[]> {
+  const base = getServerApiBaseUrl();
+  if (!base) return [];
+
   try {
-    const res = await fetch(`${process.env.API_URL}/products`, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to fetch products');
-    const data = await res.json();
-    return data.slice(0, 4); // Take latest 4
+    const res = await fetch(`${base}/products`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error(`[your-style] GET ${base}/products failed: ${res.status}`);
+      return [];
+    }
+    const data: unknown = await res.json();
+    const list = Array.isArray(data) ? (data as Product[]) : [];
+    return list.slice(0, 4);
   } catch (error) {
-    console.error('Error fetching new arrivals for homepage:', error);
+    console.error('[your-style] Error fetching new arrivals for homepage:', error);
     return [];
   }
 }
 
 async function getSpotlightPosts(): Promise<SpotlightPost[]> {
+  const base = getServerApiBaseUrl();
+  if (!base) return [];
+
   try {
-    const res = await fetch(`${process.env.API_URL}/posts`, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to fetch posts');
-    const data = (await res.json()) as SpotlightPost[];
-    return data.slice(0, 2);
+    const res = await fetch(`${base}/posts`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error(`[your-style] GET ${base}/posts failed: ${res.status}`);
+      return [];
+    }
+    const data: unknown = await res.json();
+    const list = Array.isArray(data) ? (data as SpotlightPost[]) : [];
+    return list.slice(0, 2);
   } catch (error) {
-    console.error('Error fetching spotlight posts:', error);
+    console.error('[your-style] Error fetching spotlight posts:', error);
     return [];
   }
 }

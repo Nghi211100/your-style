@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { getServerApiBaseUrl } from '@/lib/serverApiUrl';
 
 export const revalidate = 0;
 
@@ -19,24 +20,31 @@ interface Post {
 }
 
 async function getPost(slug: string): Promise<Post | null> {
+  const base = getServerApiBaseUrl();
+  if (!base) return null;
+
   try {
-    const res = await fetch(`${process.env.API_URL}/posts/${slug}`, { cache: 'no-store' });
+    const res = await fetch(`${base}/posts/${slug}`, { cache: 'no-store' });
     if (!res.ok) return null;
     return res.json();
   } catch (error) {
-    console.error('Error fetching post:', error);
+    console.error('[your-style] Error fetching post:', error);
     return null;
   }
 }
 
 async function getRelatedPosts(currentSlug: string): Promise<Post[]> {
+  const base = getServerApiBaseUrl();
+  if (!base) return [];
+
   try {
-    const res = await fetch(`${process.env.API_URL}/posts`, { cache: 'no-store' });
+    const res = await fetch(`${base}/posts`, { cache: 'no-store' });
     if (!res.ok) return [];
-    const all = (await res.json()) as Post[];
+    const data: unknown = await res.json();
+    const all = Array.isArray(data) ? (data as Post[]) : [];
     return all.filter((p) => p.slug !== currentSlug).slice(0, 2);
   } catch (error) {
-    console.error('Error fetching related posts:', error);
+    console.error('[your-style] Error fetching related posts:', error);
     return [];
   }
 }

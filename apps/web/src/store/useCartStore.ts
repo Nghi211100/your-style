@@ -88,7 +88,7 @@ export const useCartStore = create<CartState>()(
             (i) => i.productId === item.productId && i.size === item.size && i.color === item.color
           );
           
-          let newItems = [...state.items];
+          const newItems = [...state.items];
           if (existingItemIndex > -1) {
             newItems[existingItemIndex].quantity += item.quantity;
           } else {

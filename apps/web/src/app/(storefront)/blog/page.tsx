@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getServerApiBaseUrl } from '@/lib/serverApiUrl';
 import BlogListingClient from './BlogListingClient';
 
 export const revalidate = 0;
@@ -18,12 +19,19 @@ export interface Article {
 }
 
 async function getArticles(): Promise<Article[]> {
+  const base = getServerApiBaseUrl();
+  if (!base) return [];
+
   try {
-    const res = await fetch(`${process.env.API_URL}/posts`, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to fetch posts');
-    return res.json();
+    const res = await fetch(`${base}/posts`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error(`[your-style] GET ${base}/posts failed: ${res.status} ${res.statusText}`);
+      return [];
+    }
+    const data: unknown = await res.json();
+    return Array.isArray(data) ? (data as Article[]) : [];
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
+    console.error('[your-style] Error fetching blog posts (is the API running on the same host as API_URL?)', error);
     return [];
   }
 }

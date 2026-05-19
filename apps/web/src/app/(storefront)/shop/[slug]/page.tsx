@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import AddToCartForm from '@/components/product/AddToCartForm';
 import ProductCard from '@/components/product/ProductCard';
+import { getServerApiBaseUrl } from '@/lib/serverApiUrl';
 
 export const revalidate = 0;
 
@@ -20,32 +21,36 @@ interface ProductData {
 }
 
 async function getProduct(slug: string): Promise<ProductData | null> {
+  const base = getServerApiBaseUrl();
+  if (!base) return null;
+
   try {
-    const res = await fetch(`${process.env.API_URL}/products/slug/${slug}`, { cache: 'no-store' });
+    const res = await fetch(`${base}/products/slug/${slug}`, { cache: 'no-store' });
     if (!res.ok) {
       if (res.status === 404) return null;
-      throw new Error('Failed to fetch product');
+      return null;
     }
     return res.json();
   } catch (error) {
-    console.error('Error fetching product:', error);
+    console.error('[your-style] Error fetching product:', error);
     return null;
   }
 }
 
 async function getRelatedProducts(category: string, excludeId: string): Promise<ProductData[]> {
+  const base = getServerApiBaseUrl();
+  if (!base) return [];
+
   try {
-    const res = await fetch(`${process.env.API_URL}/products`, { cache: 'no-store' });
+    const res = await fetch(`${base}/products`, { cache: 'no-store' });
     if (!res.ok) {
       return [];
     }
-    const products: ProductData[] = await res.json();
-    // Filter by same category and exclude current product, take first 4
-    return products
-      .filter(p => p.category === category && p.id !== excludeId)
-      .slice(0, 4);
+    const data: unknown = await res.json();
+    const products = Array.isArray(data) ? (data as ProductData[]) : [];
+    return products.filter((p) => p.category === category && p.id !== excludeId).slice(0, 4);
   } catch (error) {
-    console.error('Error fetching related products:', error);
+    console.error('[your-style] Error fetching related products:', error);
     return [];
   }
 }
