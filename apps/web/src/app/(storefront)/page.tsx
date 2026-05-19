@@ -12,6 +12,14 @@ interface Product {
   images: string[];
 }
 
+interface SpotlightPost {
+  slug: string;
+  title: string;
+  summary: string;
+  category: string;
+  image: string;
+}
+
 async function getNewArrivals(): Promise<Product[]> {
   try {
     const res = await fetch(`${process.env.API_URL}/products`, { cache: 'no-store' });
@@ -24,8 +32,20 @@ async function getNewArrivals(): Promise<Product[]> {
   }
 }
 
+async function getSpotlightPosts(): Promise<SpotlightPost[]> {
+  try {
+    const res = await fetch(`${process.env.API_URL}/posts`, { cache: 'no-store' });
+    if (!res.ok) throw new Error('Failed to fetch posts');
+    const data = (await res.json()) as SpotlightPost[];
+    return data.slice(0, 2);
+  } catch (error) {
+    console.error('Error fetching spotlight posts:', error);
+    return [];
+  }
+}
+
 export default async function Home() {
-  const newArrivals = await getNewArrivals();
+  const [newArrivals, spotlightPosts] = await Promise.all([getNewArrivals(), getSpotlightPosts()]);
 
   return (
     <div className="bg-warm-ivory text-[#1c1b1b]">
@@ -215,59 +235,45 @@ export default async function Home() {
         <h2 className="font-serif text-3xl md:text-4xl text-neutral-900 tracking-wide uppercase mb-12 text-center">
           Editorial Spotlight
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="group relative h-[500px] overflow-hidden rounded-2xl shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-end p-8 md:p-12">
-            <img
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              alt="Sustainable Fashion"
-              src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=2940&auto=format&fit=crop"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-            <div className="relative z-10 text-white space-y-4">
-              <span className="text-[10px] text-champagne-gold tracking-[0.2em] uppercase font-bold">
-                SUSTAINABILITY
-              </span>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold leading-tight">
-                Sustainable Fashion: The New Luxury Standard
-              </h3>
-              <p className="text-xs text-neutral-300 font-light max-w-md leading-relaxed">
-                Why mindfulness and circular tailoring represent the absolute pinnacle of high fashion in 2026 and beyond.
-              </p>
-              <Link
-                href="/blog/sustainable-fashion"
-                className="inline-block text-xs uppercase tracking-widest border-b border-white hover:border-champagne-gold hover:text-champagne-gold transition-colors pb-1"
+        {spotlightPosts.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {spotlightPosts.map((post) => (
+              <div
+                key={post.slug}
+                className="group relative h-[500px] overflow-hidden rounded-2xl shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-end p-8 md:p-12"
               >
-                Read Article
-              </Link>
-            </div>
+                <img
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  alt={post.title}
+                  src={post.image}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="relative z-10 text-white space-y-4">
+                  <span className="text-[10px] text-champagne-gold tracking-[0.2em] uppercase font-bold">
+                    {post.category}
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold leading-tight">{post.title}</h3>
+                  <p className="text-xs text-neutral-300 font-light max-w-md leading-relaxed line-clamp-3">
+                    {post.summary}
+                  </p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-block text-xs uppercase tracking-widest border-b border-white hover:border-champagne-gold hover:text-champagne-gold transition-colors pb-1"
+                  >
+                    Read Article
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="group relative h-[500px] overflow-hidden rounded-2xl shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-end p-8 md:p-12">
-            <img
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              alt="Art of Tailoring"
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2942&auto=format&fit=crop"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-            <div className="relative z-10 text-white space-y-4">
-              <span className="text-[10px] text-champagne-gold tracking-[0.2em] uppercase font-bold">
-                CRAFTSMANSHIP
-              </span>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold leading-tight">
-                The Art of Tailoring: From Thread to Silhouette
-              </h3>
-              <p className="text-xs text-neutral-300 font-light max-w-md leading-relaxed">
-                An intimate look into our atelier, showcasing the timeless drafting methods used to create sculptural coats.
-              </p>
-              <Link
-                href="/blog/art-of-tailoring"
-                className="inline-block text-xs uppercase tracking-widest border-b border-white hover:border-champagne-gold hover:text-champagne-gold transition-colors pb-1"
-              >
-                Read Article
-              </Link>
-            </div>
+        ) : (
+          <div className="py-20 text-center border border-dashed border-neutral-200 rounded-xl bg-[#fdf8f7]">
+            <p className="text-sm text-neutral-500 font-light mb-4">No editorials available.</p>
+            <Link href="/blog" className="text-xs underline tracking-widest uppercase hover:text-champagne-gold">
+              Visit Journal
+            </Link>
           </div>
-        </div>
+        )}
       </section>
 
       {/* Collection Banner */}
