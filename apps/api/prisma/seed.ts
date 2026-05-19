@@ -2,7 +2,10 @@ import { PrismaClient } from '@prisma/client';
 import { Pool } from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL || 'postgresql://your_style_user:your_style_password@localhost:5432/your_style_db?schema=public' });
+if (!process.env.DATABASE_URL) {
+  throw new Error('DATABASE_URL is not defined. Please set it in your .env file.');
+}
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
