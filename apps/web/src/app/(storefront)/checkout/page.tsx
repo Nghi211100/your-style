@@ -132,7 +132,7 @@ export default function CheckoutPage() {
     const finalTotal = getFinalTotal();
 
     try {
-      const response = await fetch('http://localhost:3001/orders', {
+      const response = await fetch(`${process.env.API_URL}/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

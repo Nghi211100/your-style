@@ -41,7 +41,7 @@ export default function AdminCms() {
   const fetchPosts = async () => {
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:3001/posts?all=true');
+      const res = await fetch(`${process.env.API_URL}/posts?all=true`);
       if (!res.ok) throw new Error('Failed to load editorial archive.');
       const data = await res.json();
       setPosts(data);
@@ -120,8 +120,8 @@ export default function AdminCms() {
       };
 
       const url = editingPostId 
-        ? `http://localhost:3001/posts/${editingPostId}`
-        : 'http://localhost:3001/posts';
+        ? `${process.env.API_URL}/posts/${editingPostId}`
+        : `${process.env.API_URL}/posts`;
       
       const method = editingPostId ? 'PATCH' : 'POST';
 
@@ -148,7 +148,7 @@ export default function AdminCms() {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:3001/posts/${postId}`, {
+      const res = await fetch(`${process.env.API_URL}/posts/${postId}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Failed to delete article.');

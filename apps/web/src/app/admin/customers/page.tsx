@@ -24,7 +24,7 @@ export default function AdminCustomers() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:3001/users');
+      const res = await fetch(`${process.env.API_URL}/users`);
       if (!res.ok) throw new Error('Failed to fetch user directory.');
       const data = await res.json();
       setUsers(data);
@@ -43,7 +43,7 @@ export default function AdminCustomers() {
     try {
       setUpdatingUserId(userId);
       const newRole = currentRole === 'ADMIN' ? 'CUSTOMER' : 'ADMIN';
-      const res = await fetch(`http://localhost:3001/users/${userId}`, {
+      const res = await fetch(`${process.env.API_URL}/users/${userId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role: newRole }),
@@ -65,7 +65,7 @@ export default function AdminCustomers() {
     }
     try {
       setDeletingUserId(userId);
-      const res = await fetch(`http://localhost:3001/users/${userId}`, {
+      const res = await fetch(`${process.env.API_URL}/users/${userId}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Failed to remove client account.');

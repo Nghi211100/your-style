@@ -58,7 +58,7 @@ export default function AdminProductsPage() {
   async function fetchProducts() {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3001/products');
+      const res = await fetch(`${process.env.API_URL}/products`);
       if (!res.ok) throw new Error('Failed to fetch product catalog');
       const data = await res.json();
       setProducts(data);
@@ -132,8 +132,8 @@ export default function AdminProductsPage() {
 
     try {
       const url = editingProduct
-        ? `http://localhost:3001/products/${editingProduct.id}`
-        : 'http://localhost:3001/products';
+        ? `${process.env.API_URL}/products/${editingProduct.id}`
+        : `${process.env.API_URL}/products`;
       const method = editingProduct ? 'PATCH' : 'POST';
 
       const res = await fetch(url, {
@@ -156,7 +156,7 @@ export default function AdminProductsPage() {
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to retire this apparel from catalog?')) return;
     try {
-      const res = await fetch(`http://localhost:3001/products/${id}`, { method: 'DELETE' });
+      const res = await fetch(`${process.env.API_URL}/products/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Failed to retire apparel');
       fetchProducts();
       setSelectedIds(selectedIds.filter((item) => item !== id));
@@ -171,7 +171,7 @@ export default function AdminProductsPage() {
     try {
       await Promise.all(
         selectedIds.map((id) =>
-          fetch(`http://localhost:3001/products/${id}`, { method: 'DELETE' })
+          fetch(`${process.env.API_URL}/products/${id}`, { method: 'DELETE' })
         )
       );
       setSelectedIds([]);

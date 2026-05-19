@@ -14,7 +14,7 @@ interface Product {
 
 async function getNewArrivals(): Promise<Product[]> {
   try {
-    const res = await fetch('http://localhost:3001/products', { cache: 'no-store' });
+    const res = await fetch(`${process.env.API_URL}/products`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch products');
     const data = await res.json();
     return data.slice(0, 4); // Take latest 4

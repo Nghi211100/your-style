@@ -47,8 +47,8 @@ export default function AdminDashboard() {
     async function fetchData() {
       try {
         const [ordersRes, productsRes] = await Promise.all([
-          fetch('http://localhost:3001/orders'),
-          fetch('http://localhost:3001/products'),
+          fetch(`${process.env.API_URL}/orders`),
+          fetch(`${process.env.API_URL}/products`),
         ]);
 
         if (!ordersRes.ok || !productsRes.ok) {

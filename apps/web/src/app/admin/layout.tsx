@@ -27,7 +27,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   async function checkAdminStatus() {
     try {
-      const res = await fetch('http://localhost:3001/users/has-admin');
+      const res = await fetch(`${process.env.API_URL}/users/has-admin`);
       if (res.ok) {
         const data = await res.json();
         setHasAdmin(data.hasAdmin);
@@ -48,7 +48,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     setSetupLoading(true);
     setSetupError('');
     try {
-      const res = await fetch('http://localhost:3001/users/create-first-admin', {
+      const res = await fetch(`${process.env.API_URL}/users/create-first-admin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

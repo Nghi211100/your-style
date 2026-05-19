@@ -21,7 +21,7 @@ interface ProductData {
 
 async function getProduct(slug: string): Promise<ProductData | null> {
   try {
-    const res = await fetch(`http://localhost:3001/products/slug/${slug}`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.API_URL}/products/slug/${slug}`, { cache: 'no-store' });
     if (!res.ok) {
       if (res.status === 404) return null;
       throw new Error('Failed to fetch product');
@@ -35,7 +35,7 @@ async function getProduct(slug: string): Promise<ProductData | null> {
 
 async function getRelatedProducts(category: string, excludeId: string): Promise<ProductData[]> {
   try {
-    const res = await fetch(`http://localhost:3001/products`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.API_URL}/products`, { cache: 'no-store' });
     if (!res.ok) {
       return [];
     }

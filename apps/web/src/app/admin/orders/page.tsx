@@ -45,7 +45,7 @@ export default function AdminOrdersPage() {
   async function fetchOrders() {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3001/orders');
+      const res = await fetch(`${process.env.API_URL}/orders`);
       if (!res.ok) throw new Error('Failed to retrieve boutique order registrations');
       const data = await res.json();
       setOrders(data);
@@ -59,7 +59,7 @@ export default function AdminOrdersPage() {
 
   const handleUpdateStatus = async (orderId: string, newStatus: Order['status']) => {
     try {
-      const res = await fetch(`http://localhost:3001/orders/${orderId}/status`, {
+      const res = await fetch(`${process.env.API_URL}/orders/${orderId}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),

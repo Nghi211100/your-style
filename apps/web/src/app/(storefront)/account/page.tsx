@@ -94,7 +94,7 @@ export default function AccountPage() {
       try {
         setLoading(true);
         // Step 1: Fetch profile from backend
-        const userRes = await fetch(`http://localhost:3001/users/email?email=${storeUser.email}`);
+        const userRes = await fetch(`${process.env.API_URL}/users/email?email=${storeUser.email}`);
         if (!userRes.ok) {
           throw new Error('Failed to load profile');
         }
@@ -104,7 +104,7 @@ export default function AccountPage() {
         setEditEmail(userData.email);
 
         // Step 2: Fetch Orders for the user
-        const ordersRes = await fetch(`http://localhost:3001/orders/user/${userData.id}`);
+        const ordersRes = await fetch(`${process.env.API_URL}/orders/user/${userData.id}`);
         if (ordersRes.ok) {
           const ordersData: Order[] = await ordersRes.json();
           setOrders(ordersData);
@@ -125,7 +125,7 @@ export default function AccountPage() {
     if (!user) return;
     try {
       setSavingProfile(true);
-      const res = await fetch(`http://localhost:3001/users/${user.id}`, {
+      const res = await fetch(`${process.env.API_URL}/users/${user.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: editName, email: editEmail }),

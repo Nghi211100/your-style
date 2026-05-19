@@ -20,7 +20,7 @@ export default function LoginPage() {
       setLoading(true);
       setError(null);
 
-      const res = await fetch('http://localhost:3001/users/login', {
+      const res = await fetch(`${process.env.API_URL}/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim().toLowerCase() }),
@@ -60,7 +60,7 @@ export default function LoginPage() {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch('http://localhost:3001/users/login', {
+      const res = await fetch(`${process.env.API_URL}/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: 'sarah.mitchell@example.com' }),

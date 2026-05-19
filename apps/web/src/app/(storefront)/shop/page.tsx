@@ -54,7 +54,7 @@ function ShopContent() {
         const newUrl = `/shop?${queryParams.toString()}`;
         window.history.pushState(null, '', newUrl);
 
-        const res = await fetch(`http://localhost:3001/products?${queryParams.toString()}`);
+        const res = await fetch(`${process.env.API_URL}/products?${queryParams.toString()}`);
         if (!res.ok) {
           throw new Error('Failed to query products from catalog');
         }
