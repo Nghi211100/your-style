@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | YOUR STYLE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdea7",
+                        "surface-variant": "#e4e2de",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#494641",
+                        "on-primary-container": "#87837d",
+                        "tertiary": "#000000",
+                        "surface-container-low": "#f5f3ef",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#fed896",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1d1b17",
+                        "primary": "#000000",
+                        "tertiary-fixed": "#f2e0c8",
+                        "on-tertiary-container": "#90826e",
+                        "on-tertiary-fixed-variant": "#504534",
+                        "tertiary-container": "#231a0c",
+                        "on-secondary-fixed": "#271900",
+                        "tertiary-fixed-dim": "#d5c4ad",
+                        "background": "#fbf9f5",
+                        "surface-container-highest": "#e4e2de",
+                        "on-background": "#1b1c1a",
+                        "primary-fixed-dim": "#cbc6bf",
+                        "surface-container-high": "#eae8e4",
+                        "on-secondary-container": "#785c27",
+                        "secondary": "#755a24",
+                        "surface-dim": "#dbdad6",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#ccc6bc",
+                        "outline": "#7b766e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5b430e",
+                        "surface-tint": "#615e59",
+                        "inverse-surface": "#30312e",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-surface": "#1b1c1a",
+                        "surface": "#fbf9f5",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e8e1db",
+                        "inverse-primary": "#cbc6bf",
+                        "on-surface-variant": "#4a463f",
+                        "on-tertiary-fixed": "#231a0c",
+                        "surface-bright": "#fbf9f5",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e6c181",
+                        "primary-container": "#1d1b17",
+                        "surface-container": "#efeeea",
+                        "warm-stone": "#8C7E6A",
+                        "cashmere-gray": "#F0EDE8",
+                        "champagne-gold": "#C5B358"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "section-gap": "160px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(140, 126, 106, 0.1);
+            pointer-events: none;
+        }
+        .timeline-line {
+            width: 1px;
+            background: #ccc6bc;
+            position: absolute;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- 1. Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-display-xl text-display-xl uppercase tracking-tighter text-primary">YOUR STYLE</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Collections</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">New Arrivals</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Lookbook</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Archive</a>
+</div>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-primary cursor-pointer transition-opacity duration-200 active:opacity-70">person</span>
+<span class="material-symbols-outlined text-primary cursor-pointer transition-opacity duration-200 active:opacity-70">shopping_bag</span>
+</div>
+</div>
+</nav>
+<!-- 2. Hero Banner -->
+<header class="relative w-full h-screen overflow-hidden">
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<img alt="" class="w-full h-full object-cover grayscale brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgzxz7eYWGmBv2rbIs7y8Qj1IOdMboVoOQnNZ3-IJkoGOwcZJOgga12_uTROuFQ0zp5GeIUvLLUzy6sHPL3MI8lmAywTz6Uh1WD_BqXsXD0trYuaPj6fGicZI9M-oB-A1COQ-3xPGJj-i1DNcOX2DqJriDISc-g9oDCSGhH1WgGByTEUW45A6A26IUVYkHC-AlmdAt5aFB8oxy6Npz8emzBP7XhBIc0gejIgWOGktzTyX0cVkQ2JQxibWxEBJ1__2wDGW2fjF9S14"/>
+<div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-margin-mobile">
+<span class="font-label-caps text-label-caps text-champagne-gold uppercase mb-stack-sm tracking-[0.3em]">OUR STORY</span>
+<h1 class="font-display-xl text-display-xl md:text-[80px] text-white font-bold max-w-4xl">Crafting Elegance Since 2020</h1>
+</div>
+</header>
+<!-- 3. Brand Story Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 editorial-image-container relative">
+<img alt="" class="w-full aspect-[0.67] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2A4Z97IEVrHt-0uQevRF9z0IC89vy51MaRqaIN2bwcY0JGScOS9CwLXg_RCIoYjPouWLywQ5JbzthwjV4w4GyzgDOsswYvRXZ1FjkxayIo_KbEuCDhhlHY7uGxTi5sXBv5g8ZNZNnkexvJK8owJwdSPIIJNx0_VQIp7UKbgYIHHdTAetYyUW8EQcJy8FVUrZWwkiLS8NoAp4qQHaAZw7vyGNhCX_LTqa8rH9t_DFA2M4C9Z12MkGSw5J2TQlWcWm1IrmDESEQib4"/>
+</div>
+<div class="md:col-span-6 md:col-start-7 py-10">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase block mb-stack-md">THE VISION</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-lg leading-tight">Where Craft Meets Couture</h2>
+<div class="space-y-6 text-warm-stone font-body-lg text-body-lg">
+<p>At YOUR STYLE, we believe that true elegance is a silent dialogue between the artisan and the wearer. Born in the heart of contemporary design, our atelier serves as a sanctuary for those who appreciate the poetry in a perfectly executed stitch and the soul of ethically sourced silk.</p>
+<p>Our philosophy is rooted in the "less but better" mandate. We reject the ephemeral nature of trend-cycles in favor of architectural silhouettes that command presence through quiet confidence. Every piece we create is a testament to our uncompromising pursuit of quality and heritage craftsmanship.</p>
+<p>By blending traditional tailoring techniques with modern innovation, we define a new era of luxury—one that is conscious, deliberate, and timelessly sophisticated.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Values Section -->
+<section class="bg-cashmere-gray py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Sustainability -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-full border border-champagne-gold flex items-center justify-center mb-stack-md group-hover:bg-champagne-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-champagne-gold group-hover:text-white transition-colors duration-500">eco</span>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest mb-stack-sm">SUSTAINABILITY</h3>
+<p class="text-on-surface-variant font-body-md max-w-xs">Honoring our planet through ethical sourcing and a circular production model that minimizes waste.</p>
+</div>
+<!-- Craftsmanship -->
+<div class="flex flex-col items-center text-center group md:mt-12">
+<div class="w-16 h-16 rounded-full border border-champagne-gold flex items-center justify-center mb-stack-md group-hover:bg-champagne-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-champagne-gold group-hover:text-white transition-colors duration-500">architecture</span>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest mb-stack-sm">CRAFTSMANSHIP</h3>
+<p class="text-on-surface-variant font-body-md max-w-xs">Mastering the intricate details that transform fabric into a wearable masterpiece of structural integrity.</p>
+</div>
+<!-- Innovation -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-full border border-champagne-gold flex items-center justify-center mb-stack-md group-hover:bg-champagne-gold transition-colors duration-500">
+<span class="material-symbols-outlined text-champagne-gold group-hover:text-white transition-colors duration-500">lightbulb</span>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest mb-stack-sm">INNOVATION</h3>
+<p class="text-on-surface-variant font-body-md max-w-xs">Pushing the boundaries of design with avant-garde techniques while respecting the tenets of classical fashion.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Team Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-[0.2em] block mb-4">THE ARTISANS</span>
+<h2 class="font-headline-lg text-headline-lg">Meet Our Visionaries</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Member 1 -->
+<div class="flex flex-col">
+<div class="overflow-hidden mb-stack-md">
+<img class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700" data-alt="A professional editorial headshot of Sarah Mitchell, the Creative Director. She is a woman in her 40s with sophisticated style, wearing a tailored charcoal blazer. The background is a minimalist, softly lit fashion studio with neutral ivory tones. High-contrast lighting emphasizes her professional and confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR5qs2_k1vz1Loz09LZZb89WTmgVXjDH0h4IgC7mmD-rYM-Lg5pBq9onOdeqkIsicmDCZdXFKm5AbMaL1760Ck77VEkW29CuKR_IpM2-QI5_1T33tw-nucw1at20f1DvoZSSkeAvFDVvETdIwYK2xzq8Hb5mFpoFAvCPEgCIEr0FXoscJFJPZJ6l3M4KLAuZeJ5UwZzXx6JSORU2AwfHlSxB1PnJvlr_7M_VPrBilFZRS8j8wzExXV9rwlK3Vp8rS59RouadNWWyQ"/>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">Sarah Mitchell</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Creative Director</p>
+</div>
+<!-- Member 2 -->
+<div class="flex flex-col md:translate-y-12">
+<div class="overflow-hidden mb-stack-md">
+<img class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700" data-alt="A professional editorial headshot of Elena Rossi, Head of Design. She has an artistic and modern appearance, wearing a high-collared cashmere sweater in cream. The setting is a bright, sun-drenched atelier with sketches visible in the blurred background. The mood is creative, serene, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvu6PxuFb6LoYYtt2xU97HuCHUEmR2zLZVoZRbcBeUEs1H1LUhlroYqbkHPY0Mw5WVisEmyFnXnDtg9qEfXIHAhEmrWLvS_PCgGyhpRnrF1wG91Eab8TsMFqYc6QbfMj_M3NOqouDeednpeThpMelFvTdL8bnjKs3IVZKjh0JHmf6XjkWfxxZC6UVV7OPXtPEcHqHIAbjla-JIFSY4Rztd-tje8cDM5DgPUkpu4X94c9Nzxe9riO8fgEVlC9vG_1qon2ulP7JwuA0"/>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">Elena Rossi</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Head of Design</p>
+</div>
+<!-- Member 3 -->
+<div class="flex flex-col">
+<div class="overflow-hidden mb-stack-md">
+<img class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700" data-alt="A professional editorial headshot of Marco Valenti, Master Tailor. He is an elegant man with silver hair, wearing a perfectly fitted navy suit with a measuring tape around his neck. The atmosphere is traditional yet high-end, with dark wood accents and soft golden lighting. His expression reflects decades of expertise and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQkv5YT9IVD2fXY-TAOm9MkgcIHRKVznvYLK8tVeiH5nmHw5lzYMXn7XpaYNhils1T1ZdSh2BW70qTgEuIK5_2NZz-mQ-ZbdzWQwb5ZxJHAUn2N4RxYDlSfIS1-5h5RNXVSVS74YMVEWYyy8RdYN-5TT0a1rIxlmaZlwGKyCMqeSUs0GPMUSoB3MrKHfqPRSyuKikyiUk2SUzHC9M6aDhFy4LLcBuNxeqIfHtzGBFGL-DGjkazMQy_oqPEY6JjNaoP8iMGqjMdBMI"/>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">Marco Valenti</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Master Tailor</p>
+</div>
+</div>
+</section>
+<!-- 6. Timeline Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-section-gap overflow-hidden">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-[0.2em] block mb-4">OUR JOURNEY</span>
+<h2 class="font-headline-lg text-headline-lg">Milestones of Excellence</h2>
+</div>
+<div class="relative">
+<div class="timeline-line hidden md:block"></div>
+<div class="space-y-24">
+<!-- 2020 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+<div class="md:w-5/12 text-center md:text-right">
+<span class="font-display-xl text-display-xl text-champagne-gold opacity-30 mb-2 block">2020</span>
+<h4 class="font-headline-md text-headline-md mb-2">Founded</h4>
+<p class="text-on-surface-variant">YOUR STYLE is born from a desire to redefine contemporary luxury through ancestral techniques.</p>
+</div>
+<div class="hidden md:block w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-background"></div>
+<div class="md:w-5/12"></div>
+</div>
+<!-- 2021 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+<div class="md:w-5/12"></div>
+<div class="hidden md:block w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-background"></div>
+<div class="md:w-5/12 text-center md:text-left">
+<span class="font-display-xl text-display-xl text-champagne-gold opacity-30 mb-2 block">2021</span>
+<h4 class="font-headline-md text-headline-md mb-2">First Collection Launch</h4>
+<p class="text-on-surface-variant">The 'Ethereal Structure' collection debuts to critical acclaim in Paris, setting a new tone for minimal couture.</p>
+</div>
+</div>
+<!-- 2022 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+<div class="md:w-5/12 text-center md:text-right">
+<span class="font-display-xl text-display-xl text-champagne-gold opacity-30 mb-2 block">2022</span>
+<h4 class="font-headline-md text-headline-md mb-2">Flagship Store Opens</h4>
+<p class="text-on-surface-variant">A minimalist sanctuary opens its doors on Milan’s Via Montenapoleone, merging architecture with fashion.</p>
+</div>
+<div class="hidden md:block w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-background"></div>
+<div class="md:w-5/12"></div>
+</div>
+<!-- 2023 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+<div class="md:w-5/12"></div>
+<div class="hidden md:block w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-background"></div>
+<div class="md:w-5/12 text-center md:text-left">
+<span class="font-display-xl text-display-xl text-champagne-gold opacity-30 mb-2 block">2023</span>
+<h4 class="font-headline-md text-headline-md mb-2">International Expansion</h4>
+<p class="text-on-surface-variant">Exclusive partnerships in New York and Tokyo bring the YOUR STYLE experience to a global discerning audience.</p>
+</div>
+</div>
+<!-- 2024 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+<div class="md:w-5/12 text-center md:text-right">
+<span class="font-display-xl text-display-xl text-champagne-gold opacity-30 mb-2 block">2024</span>
+<h4 class="font-headline-md text-headline-md mb-2">Sustainability Pledge</h4>
+<p class="text-on-surface-variant">Achieving 100% transparency in our supply chain and launching our first fully circular textile initiative.</p>
+</div>
+<div class="hidden md:block w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10 border-4 border-background"></div>
+<div class="md:w-5/12"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CTA Banner -->
+<section class="bg-[#1A1814] w-full py-section-gap relative overflow-hidden">
+<!-- Abstract light texture for depth -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-champagne-gold rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
+<h2 class="font-display-xl text-display-xl text-white mb-stack-lg">Join our journey</h2>
+<button class="bg-champagne-gold text-white px-12 py-5 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-1">
+                Explore Collection
+            </button>
+</div>
+</section>
+<!-- 8. Footer -->
+<footer class="bg-background border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-stack-md">
+<div class="font-display-xl text-display-xl text-primary">YOUR STYLE</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Terms</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Shipping</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Sustainability</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer" href="#">Contact</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 YOUR STYLE. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('header img');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

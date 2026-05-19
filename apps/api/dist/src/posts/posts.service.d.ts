@@ -1,0 +1,85 @@
+import { PrismaService } from '../prisma/prisma.service';
+export declare class PostsService {
+    private readonly prisma;
+    constructor(prisma: PrismaService);
+    create(createPostDto: any): Promise<{
+        id: string;
+        title: string;
+        slug: string;
+        content: string;
+        summary: string;
+        category: string;
+        image: string;
+        authorName: string;
+        authorRole: string;
+        authorAvatar: string | null;
+        readTime: string | null;
+        published: boolean;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    findAll(category?: string, all?: boolean): Promise<{
+        id: string;
+        title: string;
+        slug: string;
+        content: string;
+        summary: string;
+        category: string;
+        image: string;
+        authorName: string;
+        authorRole: string;
+        authorAvatar: string | null;
+        readTime: string | null;
+        published: boolean;
+        createdAt: Date;
+        updatedAt: Date;
+    }[]>;
+    findBySlug(slug: string): Promise<{
+        id: string;
+        title: string;
+        slug: string;
+        content: string;
+        summary: string;
+        category: string;
+        image: string;
+        authorName: string;
+        authorRole: string;
+        authorAvatar: string | null;
+        readTime: string | null;
+        published: boolean;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    update(id: string, updatePostDto: any): Promise<{
+        id: string;
+        title: string;
+        slug: string;
+        content: string;
+        summary: string;
+        category: string;
+        image: string;
+        authorName: string;
+        authorRole: string;
+        authorAvatar: string | null;
+        readTime: string | null;
+        published: boolean;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    remove(id: string): Promise<{
+        id: string;
+        title: string;
+        slug: string;
+        content: string;
+        summary: string;
+        category: string;
+        image: string;
+        authorName: string;
+        authorRole: string;
+        authorAvatar: string | null;
+        readTime: string | null;
+        published: boolean;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+}

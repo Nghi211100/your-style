@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Art of Architectural Tailoring | YOUR STYLE Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#ddd9d8",
+                        "surface-container-low": "#f7f3f1",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#90826e",
+                        "inverse-on-surface": "#f4f0ee",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdea7",
+                        "on-secondary-fixed-variant": "#5b430e",
+                        "secondary-container": "#fed896",
+                        "primary-fixed-dim": "#cbc6bf",
+                        "on-secondary-container": "#785c27",
+                        "tertiary-fixed-dim": "#d5c4ad",
+                        "surface-tint": "#615e59",
+                        "outline-variant": "#ccc6bc",
+                        "tertiary-fixed": "#f2e0c8",
+                        "surface-variant": "#e6e2e0",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-primary-container": "#87837d",
+                        "outline": "#7b766e",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e8e1db",
+                        "surface-container-high": "#ebe7e6",
+                        "on-tertiary-fixed-variant": "#504534",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1d1b17",
+                        "secondary-fixed-dim": "#e6c181",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "inverse-primary": "#cbc6bf",
+                        "tertiary-container": "#231a0c",
+                        "surface": "#fdf8f7",
+                        "on-surface-variant": "#4a463f",
+                        "on-secondary-fixed": "#271900",
+                        "inverse-surface": "#31302f",
+                        "on-background": "#1c1b1b",
+                        "primary": "#000000",
+                        "secondary": "#755a24",
+                        "on-tertiary-fixed": "#231a0c",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e6e2e0",
+                        "surface-container": "#f1edeb",
+                        "on-primary-fixed": "#1d1b17",
+                        "on-error-container": "#93000a",
+                        "background": "#fdf8f7",
+                        "on-primary-fixed-variant": "#494641",
+                        "surface-bright": "#fdf8f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Outfit"],
+                        "label-sm": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "display-lg-mobile": ["Outfit"],
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "label-xs": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "300"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-xs": ["10px", {"lineHeight": "1.4", "letterSpacing": "0.2em", "fontWeight": "300"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #fdf8f7; color: #1c1b1b; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .whisper-shadow { box-shadow: 0 20px 40px -20px rgba(26, 24, 20, 0.05); }
+        .hero-gradient { background: linear-gradient(to bottom, transparent 40%, rgba(26, 24, 20, 0.6) 100%); }
+        .selection-active { border-bottom: 1px solid rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-lg text-headline-lg tracking-tighter text-primary uppercase" href="#">YOUR STYLE</a>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant/80 font-medium font-body-md hover:text-primary transition-colors duration-300" href="#">Shop</a>
+<a class="text-on-surface-variant/80 font-medium font-body-md hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="text-primary font-bold font-body-md border-b border-primary/20 pb-1" href="#">Editorial</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined cursor-pointer active:opacity-70 transition-all duration-200">search</button>
+<button class="material-symbols-outlined cursor-pointer active:opacity-70 transition-all duration-200">person</button>
+<button class="material-symbols-outlined cursor-pointer active:opacity-70 transition-all duration-200">shopping_bag</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[90vh] w-full overflow-hidden">
+<img alt="Editorial fashion photography of a modern structured blazer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ui6vItKS79F0qOHdTPSg11BaW7kLhF3U4o4tduL4RJAiK8gh-1Rqj7Bvgr1KMiaAtluu9oinNMYxJQs95a4X1LZAeizbtI_ZLUBCV3_TSFrvyTuZIfpdpk1G8WIkLxoT4CMBx6TaNY9T7l29a7aL7ldUZ3VUbbpaT8s77d-Tm-8j7KDUNVQuz4eWIk94KTGtmAdgAi_cbo1FhAuIwFCk5lr_gbu4-4LayFk9hKuwJJpU-z1QhtVNHLDow"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute bottom-margin-desktop left-margin-desktop max-w-4xl text-white">
+<span class="font-label-xs text-label-xs uppercase tracking-[0.2em] mb-4 block">EDITORIAL</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-4">The Art of Architectural Tailoring</h1>
+</div>
+</section>
+<!-- Article Content -->
+<article class="px-margin-mobile md:px-0 py-section-gap">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 leading-relaxed italic border-l-2 border-secondary/30 pl-6">
+                    In the quiet corners of our atelier, a revolution is taking place—not one of loud patterns or fleeting trends, but of structure, shadow, and the surgical precision of the seam.
+                </p>
+<h2 class="font-headline-md text-headline-md mb-6">The Foundation</h2>
+<div class="font-body-md text-body-md text-on-surface mb-12 space-y-6">
+<p>Understanding architectural tailoring begins with the canvas. Like the structural steel of a skyscraper, the internal construction of a blazer defines its longevity and its silhouette. We look to the masters of mid-century architecture for inspiration—where form strictly follows function, yet function is elevated to an art form.</p>
+<p>Every piece starts with a conversation between the fabric and the cutter. The weight of the wool must be balanced against the intended drape, ensuring that even the most rigid-looking structure feels like a second skin once donned.</p>
+</div>
+<div class="my-16 flex flex-col items-center">
+<blockquote class="font-headline-md text-headline-md text-secondary italic text-center max-w-lg mb-4">
+                        "True elegance is a silent dialogue between the artisan and the wearer."
+                    </blockquote>
+<div class="w-12 h-[1px] bg-secondary/30"></div>
+</div>
+<div class="mb-16">
+<img alt="Behind the scenes at the atelier showing tailors working on a bespoke suit" class="w-full h-auto rounded-xl whisper-shadow" src="https://lh3.googleusercontent.com/aida/ADBb0uiT1PxclgX8B9lxmInv_sM0A65AGp1-h9v-OwaMxdnsdJc1Q-8WlH_UaTe2yfqIE9BIhaGXTTMEZRx6ClMDQdB0q3-pMohkTZnoO3PXBERu7FxQS6eC2wGS6p-3GfuB98qFzJG8uRw8xcULr8Cs_tdImcRY5wEKtD5Y8vou7HuuE3IbPFnKCeRZVqyZ35N1C-Q6N9PcF-LxnwZpbzxegzVDvEnhcIewXUq2DZtVVpZkA0_iBocAsksDrKs"/>
+<span class="font-label-xs text-label-xs text-on-surface-variant mt-4 block text-center uppercase tracking-widest">INSIDE THE ATELIER: THE CUTTING TABLE</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6">The Silhouette</h2>
+<div class="font-body-md text-body-md text-on-surface mb-12 space-y-6">
+<p>The modern silhouette is one of intentional restraint. We move away from the excess of the past, focusing instead on the harmony of the shoulder line and the subtle curve of the waist. This is where architectural principles truly shine; creating a three-dimensional form that maintains its integrity in motion.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-16">
+<div class="space-y-4">
+<img alt="Close up detail of a perfectly tailored blazer cuff and buttonholes" class="w-full aspect-[3/4] object-cover rounded-xl whisper-shadow" src="https://lh3.googleusercontent.com/aida/ADBb0uglKG_gR3VpcHgrjFJYTt__TWOTBivAu_-o1FweJ-f1YH4Fobk7x0BosCE2NbwSopG3Iq9eSFI__cDrEdrvHsmXlbs6lEKempHkqU8akE2qmgK82FSI39e86fexEON1MX_My_hg7Wm9IrDXmH1rzsg-D8YC7b0BkuSuXfskcLPx9IuAcgzIyCSewpM_O9B9SpZv2AGRB-3FLyyYkdfxBPOveVuO2mIdewDZaPVXgcFq9PwHLru9WTliu8c"/>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">DETAIL: THE HAND-FINISHED CUFF</p>
+</div>
+<div class="flex items-end">
+<p class="font-body-md text-body-md text-on-surface-variant pb-8">The cuff is a testament to the artisan's touch. Each buttonhole is hand-stitched over several hours, a hidden hallmark of true luxury that only the wearer truly appreciates.</p>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6">The Finishing Touch</h2>
+<div class="font-body-md text-body-md text-on-surface mb-20 space-y-6">
+<p>A garment is only as good as its final stitch. Beyond the structural integrity lies the finishing—the pressing, the steaming, and the final inspection under natural light. This rigorous process ensures that the architectural vision remains untainted, ready to be lived in, and passed down through generations.</p>
+</div>
+<!-- Author Bio -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 mb-section-gap">
+<div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border-2 border-white">
+<img alt="Portrait of head designer Elena Rossi" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida/ADBb0uhAUs0pRyUVArWY3a3Q7Hs_tRNzAHz16QF0-waS5RWtkRKV04g6ofPNOpCbt0kmhSjND6tbyyn0mUJiwzPW5G8hjbCQhwyWuBunZWNdGnuj-zj8bQTOyKLLAhGzk6liuAN8Ic-HnU4gYKaQVscJAPQQkIV98ZfXud27n8cwNOJDAFat_pq94ABXgbOoia_QbNWHRw_AO3OK1pKYiqc5Oxx8id7GdUxr1YNVfpZvgNSDKwg7NF2Lrrxa8NE"/>
+</div>
+<div class="text-center md:text-left">
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Elena Rossi</h4>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-3">Head of Design</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Elena leads our creative vision with a focus on sustainable luxury and modern heritage. Her background in sculpture informs the structured approach to every collection.</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Articles -->
+<section class="bg-surface-container-lowest py-section-gap px-margin-desktop">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<h3 class="font-headline-lg text-headline-lg">Further Reading</h3>
+<a class="font-label-sm text-label-sm uppercase tracking-widest border-b border-primary pb-1" href="#">View Editorial Archive</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Related Card 1 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden rounded-xl mb-6 aspect-[3/4]">
+<img alt="Autumn layering fashion editorial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhAUs0pRyUVArWY3a3Q7Hs_tRNzAHz16QF0-waS5RWtkRKV04g6ofPNOpCbt0kmhSjND6tbyyn0mUJiwzPW5G8hjbCQhwyWuBunZWNdGnuj-zj8bQTOyKLLAhGzk6liuAN8Ic-HnU4gYKaQVscJAPQQkIV98ZfXud27n8cwNOJDAFat_pq94ABXgbOoia_QbNWHRw_AO3OK1pKYiqc5Oxx8id7GdUxr1YNVfpZvgNSDKwg7NF2Lrrxa8NE"/>
+</div>
+<span class="font-label-xs text-label-xs text-secondary uppercase tracking-[0.2em] mb-2 block">STYLE GUIDE</span>
+<h4 class="font-headline-md text-headline-md group-hover:text-secondary transition-colors">Autumn Layering</h4>
+</div>
+<!-- Related Card 2 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden rounded-xl mb-6 aspect-[3/4]">
+<img alt="The Perfect Fit tailored trousers shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uh7oATmvqq3ttDk4IlXSya9lRX4d19Tmlokrq5p9AEBp69yipVUNAOwaghQ7UODKEixIFjkinM8v7Qi6NKNjzf1REaUOr2FBxOzcFnCeb_g0Edws44GeejQIZw0nBh0ijObDJ8Lk62lh2XwpuRY_CJIrCF64KoKFudKCU0P1w19OTVfvSNV1JPZllokXsaGticLSzUIv4-s1OvBRtD6PAtAQTbHkv656AzsEXMrQUojnbRMEgeXOENUnQ"/>
+</div>
+<span class="font-label-xs text-label-xs text-secondary uppercase tracking-[0.2em] mb-2 block">CRAFTSMANSHIP</span>
+<h4 class="font-headline-md text-headline-md group-hover:text-secondary transition-colors">The Perfect Fit</h4>
+</div>
+<!-- Related Card 3 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden rounded-xl mb-6 aspect-[3/4]">
+<img alt="Sustainable silk shirt product shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uj6UeoJabgS-ncNV38KNWGb0hvQ4-L3faaHCEO_NgGmiT6LjO1meIXkCssUp8aTK6uiW2C7O_rTRxvyMNHc0dodueoDYNg6HH9-TDaojRg4xtHRpvOog0SGY-yWC77SZP30w0tozEKz7rcIiS0Bmqe62y12RfvnUnyAJSdzkHMtbiUHFJjlEXLcRE1MylygTWE6wME31KGtZrbqoEdegx3Z744rOQopvMAvqPK8mjZvUSA0SjzEsJzqLbw"/>
+</div>
+<span class="font-label-xs text-label-xs text-secondary uppercase tracking-[0.2em] mb-2 block">MATERIALS</span>
+<h4 class="font-headline-md text-headline-md group-hover:text-secondary transition-colors">Sustainable Silk</h4>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<a class="font-headline-md text-headline-md text-primary block mb-6" href="#">YOUR STYLE</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Elevating the everyday through architectural precision and sustainable luxury.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Editorial</h5>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Journal</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Collections</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Service</h5>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Newsletter</h5>
+<div class="flex border-b border-primary pb-2">
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md p-0" placeholder="Email Address" type="email"/>
+<button class="material-symbols-outlined">arrow_forward</button>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary">photo_camera</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary">chat_bubble</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-margin-desktop py-8 border-t border-outline-variant/10 flex justify-between items-center">
+<p class="font-label-xs text-label-xs text-on-surface-variant">© 2024 YOUR STYLE. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="font-label-xs text-label-xs text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy</a>
+<a class="font-label-xs text-label-xs text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms</a>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle scroll reveal effect for images
+        window.addEventListener('scroll', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+                if (!(rect.bottom < 0 || rect.top - viewHeight >= 0)) {
+                   img.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body></html>

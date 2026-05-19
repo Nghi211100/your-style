@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELÉGANCE | Your Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fdf8f7; /* Warm Ivory/Background from config */
+            color: #1c1b1b; /* On-background/Deep Espresso */
+        }
+        .text-champagne {
+            color: #755a24; /* Closest to Champagne Gold from config: Secondary */
+        }
+        .border-champagne {
+            border-color: #755a24;
+        }
+        .bg-cashmere {
+            background-color: #f1edeb; /* Surface Container from config */
+        }
+        .whisper-shadow {
+            box-shadow: 0 20px 40px -10px rgba(26, 24, 20, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ebe7e6",
+                        "surface-container": "#f1edeb",
+                        "on-background": "#1c1b1b",
+                        "on-secondary-fixed": "#271900",
+                        "tertiary-container": "#231a0c",
+                        "on-surface": "#1c1b1b",
+                        "inverse-surface": "#31302f",
+                        "surface-variant": "#e6e2e0",
+                        "tertiary": "#000000",
+                        "on-primary-container": "#87837d",
+                        "inverse-primary": "#cbc6bf",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#1d1b17",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#e8e1db",
+                        "outline": "#7b766e",
+                        "on-tertiary-container": "#90826e",
+                        "on-tertiary-fixed-variant": "#504534",
+                        "on-tertiary-fixed": "#231a0c",
+                        "background": "#fdf8f7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#f2e0c8",
+                        "primary-fixed-dim": "#cbc6bf",
+                        "surface-tint": "#615e59",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#ccc6bc",
+                        "surface-dim": "#ddd9d8",
+                        "surface-bright": "#fdf8f7",
+                        "on-surface-variant": "#4a463f",
+                        "on-primary-fixed-variant": "#494641",
+                        "surface": "#fdf8f7",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e6e2e0",
+                        "secondary-container": "#fed896",
+                        "on-secondary-container": "#785c27",
+                        "tertiary-fixed-dim": "#d5c4ad",
+                        "on-secondary-fixed-variant": "#5b430e",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f7f3f1",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1d1b17",
+                        "secondary-fixed-dim": "#e6c181",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f4f0ee",
+                        "primary": "#000000",
+                        "secondary-fixed": "#ffdea7",
+                        "secondary": "#755a24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "4px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Outfit"],
+                        "display-lg-mobile": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "label-xs": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "body-lg": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "300"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-xs": ["10px", {"lineHeight": "1.4", "letterSpacing": "0.2em", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-full mx-auto">
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Runway</a>
+</div>
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-primary tracking-tighter cursor-pointer">ELÉGANCE</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 items-center mr-4">
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Bespoke</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Atelier</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-all" data-icon="shopping_bag">shopping_bag</span>
+<span class="material-symbols-outlined cursor-pointer text-primary border-b-2 border-primary pb-1" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-12 max-w-[1440px] mx-auto w-full">
+<!-- Profile Header -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
+<div class="flex items-center gap-8">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center border border-outline-variant/20">
+<img alt="Sarah Mitchell" class="w-full h-full object-cover" data-alt="A sophisticated editorial portrait of a woman with a serene expression, lit by soft studio light that accentuates her features. The aesthetic is clean and high-end, featuring a warm-toned neutral background that matches a luxury fashion brand's identity. The overall mood is one of quiet confidence and understated elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoFuzoLmqFCyALdd7_zjVPnI9qRWsaGCaOEmJXFVyVX9RRtRrFgA31RV6laKBdggnR-uuiQUgKrJIpiNJnBPXuJrBFR3pYYeGGSZvIiqNIQlGpIdifXqEksKmEzV5catC0CnwCFYiUykcPjuBoRsrqIChIX7x21J8kyCtKvelGt7mlPvd4PMXG_sURZMyGV6QMjHMwn1ZYvD2vk9bvHa8YKKr4b5_htn7YJNTqf9uO72-L188vaizDBNOmaXpvyw-2Qd-qL_Shfdk"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-white p-2 rounded-full shadow-lg border border-outline-variant/20 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="photo_camera">photo_camera</span>
+</button>
+</div>
+<div class="space-y-1">
+<h1 class="font-headline-lg text-headline-lg">Sarah Mitchell</h1>
+<p class="font-body-md text-outline">sarah.mitchell@example.com</p>
+<p class="font-label-xs text-label-xs uppercase text-secondary tracking-widest">Member since 2024</p>
+</div>
+</div>
+<button class="px-8 py-3 rounded-lg border border-outline hover:bg-on-background hover:text-white transition-all duration-300 font-label-sm text-label-sm uppercase tracking-widest">
+                Edit Profile
+            </button>
+</section>
+<!-- Main Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Tabs & Orders -->
+<div class="lg:col-span-8">
+<!-- Tab Navigation -->
+<nav class="flex gap-10 border-b border-outline-variant/30 mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<a class="pb-4 text-label-sm font-label-sm uppercase tracking-widest border-b-2 border-secondary text-primary" href="#">Orders</a>
+<a class="pb-4 text-label-sm font-label-sm uppercase tracking-widest border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors" href="#">Wishlist</a>
+<a class="pb-4 text-label-sm font-label-sm uppercase tracking-widest border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors" href="#">Addresses</a>
+<a class="pb-4 text-label-sm font-label-sm uppercase tracking-widest border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<!-- Orders List -->
+<div class="space-y-6">
+<!-- Order 1 -->
+<div class="bg-surface-container-low rounded-xl p-8 whisper-shadow border border-outline-variant/10 group transition-all hover:border-outline-variant/40">
+<div class="flex flex-col md:flex-row justify-between mb-8 gap-4">
+<div>
+<span class="font-mono text-body-md tracking-tighter text-primary">#ORD-2024-9021</span>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-widest">October 12, 2024</span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+                                        Delivered
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$1,250.00</p>
+</div>
+</div>
+<div class="flex gap-4 mb-8 overflow-x-auto pb-2">
+<img alt="Product 1" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0ui6vItKS79F0qOHdTPSg11BaW7kLhF3U4o4tduL4RJAiK8gh-1Rqj7Bvgr1KMiaAtluu9oinNMYxJQs95a4X1LZAeizbtI_ZLUBCV3_TSFrvyTuZIfpdpk1G8WIkLxoT4CMBx6TaNY9T7l29a7aL7ldUZ3VUbbpaT8s77d-Tm-8j7KDUNVQuz4eWIk94KTGtmAdgAi_cbo1FhAuIwFCk5lr_gbu4-4LayFk9hKuwJJpU-z1QhtVNHLDow"/>
+<img alt="Product 2" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0uh7oATmvqq3ttDk4IlXSya9lRX4d19Tmlokrq5p9AEBp69yipVUNAOwaghQ7UODKEixIFjkinM8v7Qi6NKNjzf1REaUOr2FBxOzcFnCeb_g0Edws44GeejQIZw0nBh0ijObDJ8Lk62lh2XwpuRY_CJIrCF64KoKFudKCU0P1w19OTVfvSNV1JPZllokXsaGticLSzUIv4-s1OvBRtD6PAtAQTbHkv656AzsEXMrQUojnbRMEgeXOENUnQ"/>
+<img alt="Product 3" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0uhyYxe_vaforMdTGOrtp2eCKo_IDZdxgscSd0a5JMReapTjp-ZJ-BxxjiHPv4W6kiTMkjouhpCJduPdh5aAGaH2syE4n4tu0KmaHXmVR19DJ4ceZsAq3RimxVh-AW9GPejClIX_DJ371FN7pCSKCJZ3xvrFis4sKC0zigT2ERClIlhQS0Y0NbIfeoPD6zPGL9XCOUqyzraTZiCnHMydK3FJ-aEys7_mJ3LR9tRratPtKAwLqjVNK9wYQgE"/>
+<img alt="Product 4" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0uj6UeoJabgS-ncNV38KNWGb0hvQ4-L3faaHCEO_NgGmiT6LjO1meIXkCssUp8aTK6uiW2C7O_rTRxvyMNHc0dodueoDYNg6HH9-TDaojRg4xtHRpvOog0SGY-yWC77SZP30w0tozEKz7rcIiS0Bmqe62y12RfvnUnyAJSdzkHMtbiUHFJjlEXLcRE1MylygTWE6wME31KGtZrbqoEdegx3Z744rOQopvMAvqPK8mjZvUSA0SjzEsJzqLbw"/>
+</div>
+<div class="flex gap-8 border-t border-outline-variant/20 pt-6">
+<a class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline underline-offset-4 decoration-2" href="#">View Details</a>
+<a class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline underline-offset-4 decoration-2" href="#">Track Order</a>
+</div>
+</div>
+<!-- Order 2 -->
+<div class="bg-surface-container-low rounded-xl p-8 whisper-shadow border border-outline-variant/10 group">
+<div class="flex flex-col md:flex-row justify-between mb-8 gap-4">
+<div>
+<span class="font-mono text-body-md tracking-tighter text-primary">#ORD-2024-8854</span>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-widest">September 28, 2024</span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                        Shipped
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$840.00</p>
+</div>
+</div>
+<div class="flex gap-4 mb-8">
+<img alt="Product 2" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0uh7oATmvqq3ttDk4IlXSya9lRX4d19Tmlokrq5p9AEBp69yipVUNAOwaghQ7UODKEixIFjkinM8v7Qi6NKNjzf1REaUOr2FBxOzcFnCeb_g0Edws44GeejQIZw0nBh0ijObDJ8Lk62lh2XwpuRY_CJIrCF64KoKFudKCU0P1w19OTVfvSNV1JPZllokXsaGticLSzUIv4-s1OvBRtD6PAtAQTbHkv656AzsEXMrQUojnbRMEgeXOENUnQ"/>
+<img alt="Product 4" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0uj6UeoJabgS-ncNV38KNWGb0hvQ4-L3faaHCEO_NgGmiT6LjO1meIXkCssUp8aTK6uiW2C7O_rTRxvyMNHc0dodueoDYNg6HH9-TDaojRg4xtHRpvOog0SGY-yWC77SZP30w0tozEKz7rcIiS0Bmqe62y12RfvnUnyAJSdzkHMtbiUHFJjlEXLcRE1MylygTWE6wME31KGtZrbqoEdegx3Z744rOQopvMAvqPK8mjZvUSA0SjzEsJzqLbw"/>
+</div>
+<div class="flex gap-8 border-t border-outline-variant/20 pt-6">
+<a class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline" href="#">View Details</a>
+<a class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline" href="#">Track Order</a>
+</div>
+</div>
+<!-- Order 3 -->
+<div class="bg-surface-container-low rounded-xl p-8 whisper-shadow border border-outline-variant/10 group opacity-75">
+<div class="flex flex-col md:flex-row justify-between mb-8 gap-4">
+<div>
+<span class="font-mono text-body-md tracking-tighter text-primary">#ORD-2024-7120</span>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-widest">July 15, 2024</span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+                                        Delivered
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$2,100.00</p>
+</div>
+</div>
+<div class="flex gap-4 mb-8">
+<img alt="Product 1" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0ui6vItKS79F0qOHdTPSg11BaW7kLhF3U4o4tduL4RJAiK8gh-1Rqj7Bvgr1KMiaAtluu9oinNMYxJQs95a4X1LZAeizbtI_ZLUBCV3_TSFrvyTuZIfpdpk1G8WIkLxoT4CMBx6TaNY9T7l29a7aL7ldUZ3VUbbpaT8s77d-Tm-8j7KDUNVQuz4eWIk94KTGtmAdgAi_cbo1FhAuIwFCk5lr_gbu4-4LayFk9hKuwJJpU-z1QhtVNHLDow"/>
+</div>
+<div class="flex gap-8 border-t border-outline-variant/20 pt-6">
+<a class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline" href="#">View Details</a>
+</div>
+</div>
+<!-- Order 4 -->
+<div class="bg-surface-container-low rounded-xl p-8 whisper-shadow border border-outline-variant/10 group">
+<div class="flex flex-col md:flex-row justify-between mb-8 gap-4">
+<div>
+<span class="font-mono text-body-md tracking-tighter text-primary">#ORD-2024-6501</span>
+<div class="flex items-center gap-4 mt-1">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-widest">May 03, 2024</span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                                        Processing
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$520.00</p>
+</div>
+</div>
+<div class="flex gap-4 mb-8">
+<img alt="Product 3" class="w-20 h-24 object-cover rounded shadow-sm border border-outline-variant/10" src="https://lh3.googleusercontent.com/aida/ADBb0uhyYxe_vaforMdTGOrtp2eCKo_IDZdxgscSd0a5JMReapTjp-ZJ-BxxjiHPv4W6kiTMkjouhpCJduPdh5aAGaH2syE4n4tu0KmaHXmVR19DJ4ceZsAq3RimxVh-AW9GPejClIX_DJ371FN7pCSKCJZ3xvrFis4sKC0zigT2ERClIlhQS0Y0NbIfeoPD6zPGL9XCOUqyzraTZiCnHMydK3FJ-aEys7_mJ3LR9tRratPtKAwLqjVNK9wYQgE"/>
+</div>
+<div class="flex gap-8 border-t border-outline-variant/20 pt-6">
+<a class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline" href="#">View Details</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Quick Actions -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/20 whisper-shadow">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-8 border-b border-outline-variant/20 pb-4">Quick Actions</h3>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-white border border-outline-variant/10 hover:border-secondary hover:text-secondary transition-all group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="replay">replay</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Reorder</span>
+</div>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-white border border-outline-variant/10 hover:border-secondary hover:text-secondary transition-all group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Contact Support</span>
+</div>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-white border border-outline-variant/10 hover:border-secondary hover:text-secondary transition-all group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Download Invoice</span>
+</div>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-xl text-white whisper-shadow relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-2">Bespoke Fitting</h4>
+<p class="font-body-md opacity-80 mb-6 text-sm">Schedule your seasonal consultation with our atelier masters.</p>
+<button class="text-white border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase tracking-widest hover:text-secondary transition-colors">Book Appointment</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10 scale-150 rotate-12">
+<span class="material-symbols-outlined text-[120px]" data-icon="apparel">apparel</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-surface-container-low border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-full mx-auto">
+<div class="space-y-8">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-primary tracking-tighter">ELÉGANCE</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Impeccable craft and intentional restraint for the modern individual.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Discovery</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a></li>
+<li><a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Atelier Diary</a></li>
+<li><a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Newsletter</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Concierge</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Customer Care</a></li>
+<li><a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Inspiration</h4>
+<div class="flex gap-4">
+<input class="bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 w-full font-label-sm text-label-sm tracking-widest py-2" placeholder="YOUR EMAIL" type="email"/>
+<button class="material-symbols-outlined text-primary" data-icon="east">east</button>
+</div>
+<p class="font-label-xs text-label-xs text-outline leading-relaxed">Join the inner circle for runway access and atelier news.</p>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-outline">© 2024 ELÉGANCE ATELIER. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-outline hover:text-primary" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-outline hover:text-primary" href="#">Terms of Use</a>
+</div>
+</div>
+</footer>
+<script>
+        // Tab switching logic (aesthetic only)
+        const tabs = document.querySelectorAll('nav a');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabs.forEach(t => {
+                    t.classList.remove('border-secondary', 'text-primary');
+                    t.classList.add('border-transparent', 'text-on-surface-variant');
+                });
+                tab.classList.add('border-secondary', 'text-primary');
+                tab.classList.remove('border-transparent', 'text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,97 @@
+import { ProductsService } from './products.service';
+import { CreateProductDto } from './dto/create-product.dto';
+import { UpdateProductDto } from './dto/update-product.dto';
+export declare class ProductsController {
+    private readonly productsService;
+    constructor(productsService: ProductsService);
+    create(createProductDto: CreateProductDto): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    findAll(search?: string, category?: string, size?: string, color?: string, minPrice?: string, maxPrice?: string, sortBy?: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }[]>;
+    findOne(id: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    findBySlug(slug: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    update(id: string, updateProductDto: UpdateProductDto): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    remove(id: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+}

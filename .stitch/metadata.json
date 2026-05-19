@@ -1,0 +1,89 @@
+{
+  "name": "projects/7137131962138425523",
+  "projectId": "7137131962138425523",
+  "title": "Your Style - Luxury Fashion",
+  "visibility": "PRIVATE",
+  "createTime": "2026-05-19T02:52:27.164650Z",
+  "updateTime": "2026-05-19T03:34:00.000000Z",
+  "projectType": "PROJECT_DESIGN",
+  "origin": "STITCH",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "font": "OUTFIT",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#1a1814",
+    "saturation": 2
+  },
+  "deviceType": "DESKTOP",
+  "screens": {
+    "index": {
+      "id": "bdec04e95270442f87dc4782fdde0c13",
+      "sourceScreen": "projects/7137131962138425523/screens/bdec04e95270442f87dc4782fdde0c13",
+      "x": 0, "y": 0, "width": 2560, "height": 8210
+    },
+    "shop": {
+      "id": "d554b649975d4f22a3dcb8e1ae79baec",
+      "sourceScreen": "projects/7137131962138425523/screens/d554b649975d4f22a3dcb8e1ae79baec",
+      "x": 2700, "y": 0, "width": 2560, "height": 5214
+    },
+    "product": {
+      "id": "883e5202590a491492787b943ef32153",
+      "sourceScreen": "projects/7137131962138425523/screens/883e5202590a491492787b943ef32153",
+      "x": 5400, "y": 0, "width": 2560, "height": 6000
+    },
+    "cart": {
+      "id": "73226b367a91480ca04276c1ab77142c",
+      "sourceScreen": "projects/7137131962138425523/screens/73226b367a91480ca04276c1ab77142c",
+      "x": 8100, "y": 0, "width": 2560, "height": 5000
+    },
+    "login": {
+      "id": "88cd058e98dd447aae2ddaee9e42101f",
+      "sourceScreen": "projects/7137131962138425523/screens/88cd058e98dd447aae2ddaee9e42101f",
+      "x": 0, "y": 8500, "width": 2560, "height": 3000
+    },
+    "checkout": {
+      "id": "350b02dbc72c481087329c85eaeb30a4",
+      "sourceScreen": "projects/7137131962138425523/screens/350b02dbc72c481087329c85eaeb30a4",
+      "x": 2700, "y": 8500, "width": 2560, "height": 5000
+    },
+    "profile": {
+      "id": "d9efb47c2f7349a8990399f1743bf7a2",
+      "sourceScreen": "projects/7137131962138425523/screens/d9efb47c2f7349a8990399f1743bf7a2",
+      "x": 5400, "y": 8500, "width": 2560, "height": 5000
+    },
+    "admin-dashboard": {
+      "id": "5a01a801b48740f2bc3aaba8b72017c8",
+      "sourceScreen": "projects/7137131962138425523/screens/5a01a801b48740f2bc3aaba8b72017c8",
+      "x": 0, "y": 14000, "width": 2560, "height": 5000
+    },
+    "admin-products": {
+      "id": "7671195bf6374d71a30cad806113ca75",
+      "sourceScreen": "projects/7137131962138425523/screens/7671195bf6374d71a30cad806113ca75",
+      "x": 2700, "y": 14000, "width": 2560, "height": 5000
+    },
+    "admin-orders": {
+      "id": "33594a0791a94cf5a1aab2c0e5e095bf",
+      "sourceScreen": "projects/7137131962138425523/screens/33594a0791a94cf5a1aab2c0e5e095bf",
+      "x": 5400, "y": 14000, "width": 2560, "height": 5000
+    },
+    "about": {
+      "id": "387c20ffe0bd4e1aac59ec8afd2850bd",
+      "sourceScreen": "projects/7137131962138425523/screens/387c20ffe0bd4e1aac59ec8afd2850bd",
+      "x": 0, "y": 19500, "width": 2560, "height": 6000
+    },
+    "contact": {
+      "id": "7d8f24c5bc194cdeadcaff02a57df88e",
+      "sourceScreen": "projects/7137131962138425523/screens/7d8f24c5bc194cdeadcaff02a57df88e",
+      "x": 2700, "y": 19500, "width": 2560, "height": 5000
+    },
+    "blog": {
+      "id": "95df61f837fc414498bc24d9e33da0f5",
+      "sourceScreen": "projects/7137131962138425523/screens/95df61f837fc414498bc24d9e33da0f5",
+      "x": 5400, "y": 19500, "width": 2560, "height": 5000
+    }
+  },
+  "designSystemId": "assets/1150fc247ab7487280208db96be429ed",
+  "metadata": {
+    "userRole": "OWNER"
+  }
+}

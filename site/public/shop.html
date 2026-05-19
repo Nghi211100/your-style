@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YOUR STYLE | Luxury Fashion Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#4a463f",
+                      "on-secondary-fixed": "#271900",
+                      "outline-variant": "#ccc6bc",
+                      "surface-variant": "#e6e2e0",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#fed896",
+                      "outline": "#7b766e",
+                      "on-primary-container": "#87837d",
+                      "tertiary-fixed": "#f2e0c8",
+                      "on-primary-fixed": "#1d1b17",
+                      "surface-tint": "#615e59",
+                      "primary-fixed": "#e8e1db",
+                      "on-primary-fixed-variant": "#494641",
+                      "on-tertiary-container": "#90826e",
+                      "on-secondary-fixed-variant": "#5b430e",
+                      "primary": "#000000",
+                      "tertiary-fixed-dim": "#d5c4ad",
+                      "surface-container-low": "#f7f3f1",
+                      "inverse-primary": "#cbc6bf",
+                      "surface-container-high": "#ebe7e6",
+                      "surface-bright": "#fdf8f7",
+                      "inverse-on-surface": "#f4f0ee",
+                      "background": "#fdf8f7",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#cbc6bf",
+                      "secondary-fixed-dim": "#e6c181",
+                      "on-tertiary-fixed-variant": "#504534",
+                      "primary-container": "#1d1b17",
+                      "surface-dim": "#ddd9d8",
+                      "on-secondary-container": "#785c27",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e6e2e0",
+                      "secondary": "#755a24",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#ffdea7",
+                      "tertiary": "#000000",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#f1edeb",
+                      "surface": "#fdf8f7",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#231a0c",
+                      "on-surface": "#1c1b1b",
+                      "on-background": "#1c1b1b",
+                      "inverse-surface": "#31302f",
+                      "on-tertiary-fixed": "#231a0c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "section-gap": "120px"
+              },
+              "fontFamily": {
+                      "label-xs": ["Outfit"],
+                      "headline-md": ["Outfit"],
+                      "headline-lg": ["Outfit"],
+                      "body-md": ["Outfit"],
+                      "display-lg-mobile": ["Outfit"],
+                      "label-sm": ["Outfit"],
+                      "body-lg": ["Outfit"],
+                      "display-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "label-xs": ["10px", {"lineHeight": "1.4", "letterSpacing": "0.2em", "fontWeight": "300"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "300"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf8f7; /* Warm Ivory from brand palette */
+        }
+        .luxury-shadow {
+            box-shadow: 0 20px 40px -15px rgba(26, 24, 20, 0.05);
+        }
+        .active-tab {
+            border-bottom: 2px solid #755a24; /* Champagne Gold accent */
+        }
+        .product-card:hover .add-to-cart {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-lowest shadow-[0_20px_40px_-15px_rgba(26,24,20,0.03)] docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-on-surface">menu</button>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="text-primary border-b border-secondary-container font-label-sm text-label-sm active:opacity-80 transition-opacity" href="#">SHOP</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors duration-300" href="#">EDITORIAL</a>
+</div>
+</div>
+<div class="text-headline-md font-headline-md text-on-surface tracking-tighter uppercase">YOUR STYLE</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6">
+<span class="material-symbols-outlined text-primary dark:text-on-surface cursor-pointer hover:text-secondary transition-colors duration-300">search</span>
+<span class="material-symbols-outlined text-primary dark:text-on-surface cursor-pointer hover:text-secondary transition-colors duration-300">person</span>
+<span class="material-symbols-outlined text-primary dark:text-on-surface cursor-pointer hover:text-secondary transition-colors duration-300">favorite</span>
+</div>
+<div class="relative cursor-pointer">
+<span class="material-symbols-outlined text-primary dark:text-on-surface">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] px-1.5 py-0.5 rounded-full font-bold">2</span>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<!-- Page Header -->
+<section class="bg-surface-container py-12 px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end gap-4">
+<div>
+<nav class="flex text-on-surface-variant font-label-sm text-label-sm mb-4">
+<a class="hover:text-secondary" href="#">Home</a>
+<span class="mx-2">/</span>
+<span class="text-secondary">Shop</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary">THE COLLECTION</h1>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">
+                    Showing 24 of 156 products
+                </div>
+</div>
+</section>
+<!-- Filter & Sort Bar -->
+<section class="sticky top-[72px] z-40 bg-background/80 backdrop-blur-md border-y border-outline-variant/20 px-margin-mobile md:px-margin-desktop py-6">
+<div class="flex flex-col md:flex-row gap-6 justify-between">
+<div class="flex flex-wrap gap-4 items-center">
+<div class="flex bg-surface-container p-1 rounded-lg">
+<button class="px-6 py-2 bg-primary text-on-primary rounded-md font-label-sm text-label-sm uppercase">All</button>
+<button class="px-6 py-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase">Women</button>
+<button class="px-6 py-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase">Men</button>
+<button class="px-6 py-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase">Accessories</button>
+<button class="px-6 py-2 text-on-surface-variant opacity-40 font-label-sm text-label-sm uppercase" disabled="">Sale</button>
+</div>
+<div class="flex gap-4">
+<select class="bg-transparent border-b border-outline-variant font-label-sm text-label-sm py-2 px-4 focus:outline-none focus:border-secondary">
+<option>Size</option>
+</select>
+<select class="bg-transparent border-b border-outline-variant font-label-sm text-label-sm py-2 px-4 focus:outline-none focus:border-secondary">
+<option>Color</option>
+</select>
+<select class="bg-transparent border-b border-outline-variant font-label-sm text-label-sm py-2 px-4 focus:outline-none focus:border-secondary">
+<option>Price Range</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1.5 rounded-full font-label-sm text-label-sm">
+                        Price: $100 - $500
+                        <span class="material-symbols-outlined text-[16px] cursor-pointer">close</span>
+</div>
+<select class="bg-transparent font-label-sm text-label-sm py-2 focus:outline-none">
+<option>Sort by: Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow transition-all duration-500 overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A studio shot of a pair of high-end white designer sneakers resting on a minimalist marble pedestal. The lighting is soft and directional, highlighting the premium leather textures. The aesthetic is clean, luxury editorial with a warm tonal color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI6NpZAdS60LjvMhrEKuHPtSb600BI-RO4Vw8BFbfGEiB0kGv-7R6Dr59mzKgav-5w097gBgsAmt0ItEBGdh_fTxqtameUIX-IUT1bKwbCCews16lET0mloivSjD7XPpYZR1Z9zMj15jVbsx0mWkZXKnXaSFmsq4e8zoUsbqL7ZWe0dTWJ7LiZ2llwhKHZxr7HzEO6EoCj4g7DEJjRjzuKBbviJDQvhcbSubpxMJEA_epMZBlAN-j4S2WGQ01r6m63Jyvp-PkF9Pk"/>
+<div class="absolute top-4 left-4 bg-primary text-secondary-fixed px-3 py-1 font-label-sm text-label-sm uppercase">New</div>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</button>
+<div class="add-to-cart absolute bottom-0 left-0 right-0 translate-y-full transition-transform duration-500 bg-primary text-on-primary py-4 text-center font-label-sm text-label-sm uppercase cursor-pointer hover:bg-secondary">
+                            Add to Cart
+                        </div>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Modern Collection</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Sculpted Leather Sneaker</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">$345.00</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-xs text-on-surface-variant">4.8 (12)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow transition-all duration-500 overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a luxury charcoal wool coat with impeccable tailoring hanging in a high-end boutique setting. Warm incandescent lighting creates soft shadows on the fabric texture. The mood is sophisticated and authoritative, embodying modern fashion luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxGx2Bcy8xpm1ijzA1jr1Zuk3WL0ngo4Zezted4c2g55WpkTr4u14m7vatCxaSLx2M7jpqKR_a8Cto1oNckCt11GDxSXd7KeqncEp6IodMhrLEgWkYmLSzVt7mccdbuLOWGmEY1YP69Ke1gqHcMWf5D-aU0gyl1iVEnOOYpfiuQ7F-fNwWlsNDlytDiw0yVcXMMMOstbdCGnAWRlwwzadm2VxquVaSq8MKtCqHSZBEpx9_WPzUT83mN9m6-TMS3FhBNDGxVRMxo-Y"/>
+<div class="absolute top-4 left-4 bg-error text-white px-3 py-1 font-label-sm text-label-sm uppercase">Sale</div>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</button>
+<div class="add-to-cart absolute bottom-0 left-0 right-0 translate-y-full transition-transform duration-500 bg-primary text-on-primary py-4 text-center font-label-sm text-label-sm uppercase cursor-pointer hover:bg-secondary">
+                            Add to Cart
+                        </div>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Seasonal Edit</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Oversized Cashmere Blazer</h3>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="text-secondary font-bold">$495.00</span>
+<span class="text-on-surface-variant line-through text-label-sm">$680.00</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-xs text-on-surface-variant">5.0 (28)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 (Simplified Loop Repeat) -->
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow transition-all duration-500 overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant black leather handbag with gold hardware detail, positioned against a warm ivory background. Studio lighting creates subtle gradients on the smooth leather surface. The composition is clean and minimalist, highlighting the impeccable craft of luxury fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD6cGqwvsI6cMGh2JT1xgYPiLua4CI-wHRuR3b26L-Pt565_FK6kBR62YhasC1sI4FhCBFjvvSi23szik0PQlP5SKjWxEpskEVaHeKa3MLzd1mJIxlyWth3v74mTLHiLTAsi8F19_04ASdfu4z-WZbnJ8T2FcYIFyzfo7ByY4t_Uv0EIwLEJTZ-ZYOGNH_4g5VTB4UvOt6uHMFVEvQQkF04SiweZAs-qa_kXopq-QwBKFwPPNtdlLE3i44NcjG_7VLsz62wlsOXJ8"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</button>
+<div class="add-to-cart absolute bottom-0 left-0 right-0 translate-y-full transition-transform duration-500 bg-primary text-on-primary py-4 text-center font-label-sm text-label-sm uppercase cursor-pointer hover:bg-secondary">
+                            Add to Cart
+                        </div>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Accessories</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Petite Tote in Obsidian</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">$210.00</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-xs text-on-surface-variant">4.9 (42)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow transition-all duration-500 overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A fashion editorial image of a model wearing a high-collared silk dress in a soft champagne tone. The setting is an architectural minimalist interior with natural sunlight pouring in. The mood is serene, highlighting luxury and tactile sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHGS2iaaLBg4wTdaMgMRHDfFEdIWOeWYitlu5Q1anP6dQ2CN3XzboUz_MbgAEAv3l3dXHXjqgZKIgNXKwgRxrpCjxUGLP_kOeTwWcWoJWiCGy4hxCc-cYuk9XfG0GtcQWDmOHROrkOTZNO2Yz29G7jNFxh0pryL07GzHGQgJ0sLMd88ldj_ZpDuZ5kLqGY1HRPPo_sl7W_-kDadh_HeLL6eghicL0IuSpwR86TdPdmKAVW-xyPNSS2cvk25WmcuxTnmAuqzp6Vh0M"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</button>
+<div class="add-to-cart absolute bottom-0 left-0 right-0 translate-y-full transition-transform duration-500 bg-primary text-on-primary py-4 text-center font-label-sm text-label-sm uppercase cursor-pointer hover:bg-secondary">
+                            Add to Cart
+                        </div>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Evening Gowns</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Liquid Silk Slip Dress</h3>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-bold">$425.00</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-xs text-on-surface-variant">4.7 (18)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- (Repeating logic for 12 more products to total 16, using descriptive placeholders) -->
+<!-- Note: In a real implementation these would be 16 unique items -->
+<div class="hidden lg:block col-span-4 py-8 text-center text-label-sm text-on-surface-variant tracking-widest uppercase">
+                    Discover More Luxury Essentials
+                </div>
+<!-- Adding some mock products to fill out grid -->
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-quality studio photograph of a premium knitted sweater in a warm stone color. The texture of the fine wool is clearly visible. The lighting is soft and ambient, creating a calm and authoritative mood for a luxury fashion catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPppv_Z6qIm70zuEqjlNJue0EToqCjQUNqv7y53uBCp_Uz3saoKxuPkToS2hu65RXCdJZWjbcQhuvPBlD5dE1GJSqRckCgQ_P3HQ45z1hJYlVi5GAwSVlNhqvNDWnpBKIuLcvY7uVdToJJ4_37YRbrL3FelhetUC4wVAh87Im0cq9HX2HiNslqsSJHR3DcaaaBZRlEPP9BPI0nIgW-ZnE_m07Gs0ilF_qLFR0Xlpg1JL_kpO_NRuhUFugvlfhTb9_FKIVl0XAvh0s"/>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Knitwear</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Merino Wool Turtleneck</h3>
+<span class="text-secondary font-bold">$185.00</span>
+</div>
+</div>
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Tailored trousers in a dark espresso brown color, styled with a minimalist leather belt. High-end editorial lighting captures the crisp creases and premium fabric. The setting is a bright, modern studio environment with a warm ivory palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbS28W9k_OqUN1SeCHIdJ5-mmXtlVCoiLIaMwMkMjVlZJLGlLZJsRgnM2KpdIEymM-yNxjstRvgmD_ilSNVTIlEgFxAmGNK8aILsYMCO-PsxoZUbZ7DfJr-GS9Hu5cVIhGS_PObt_etKqsuhGGl9oYihmOydFa8_qgwxk-XK71-hgMXGvs8tkmxpzu8TC_LV3Aurv3nbR_Ej79X0q8quQkKOR8tcvJAKX2ep8_x2FLzuBZas-p0BOu4m-J11ASK_b2nVI_L0IY5OI"/>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Trousers</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">High-Waisted Pleated Pant</h3>
+<span class="text-secondary font-bold">$275.00</span>
+</div>
+</div>
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Luxury designer heels in a minimalist silhouette, made from polished black leather. The shoes are showcased in a vast gallery-like space with dramatic soft lighting that highlights the elegant curves. The aesthetic is sophisticated and timeless." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFZNE1g1smos7XWdSDAcRCko68w4Vk9TIz6Gpytxf9IRAJ-Lx68T-xlXkOVYpuXBpA-iLRlYRde4_aBW4GHbvaUr1kWioOl53sm0vFyp2qQYhq-9CUD5ZREOi60pgOdPIp4NU0M8CJ4Yn0RJKSj1hU6GJMGl3EAarxlw9cgH05RsRZ9vsomrA6pD4GFI8J4xy1P_erT0NkJd9NPNXcvL04w_nqljCmG3cwbgYLpipOgiEl92Sw6j8grf9ZGFjWwk_uDdLXnIwRgEo"/>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Footwear</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Signature Pointed Pump</h3>
+<span class="text-secondary font-bold">$540.00</span>
+</div>
+</div>
+<div class="product-card group relative bg-surface-container-lowest rounded-xl luxury-shadow overflow-hidden">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A premium denim jacket with a minimalist cut, presented in a high-key studio environment. The denim has a rich indigo wash and refined stitching details. The mood is modern and effortless luxury, fitting for a photography-forward brand catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO0zY5k3vbW0MwEv9PfdDKYYt3GXJkXJdtuSoWogaSDvEfUY32cHRuYM11_ZLkFBST0IPrrovvYnYjA6X5_cuz2B1mD_gxxh3NQMpWCkpa6WKLuqEvONpYrmFVnPJHz7B289rJTij23_nU44WzguPshmA_vTuJlYOYL1gO-jh3pniIqd61T-jLgPidmxJ0tZs-sHHMLGMTc27zIPExwvFJz2tmR-rckSUZr2EzVADpcYlx-_JYPRc51bytgqe1R-IVOkYS84T5ic8"/>
+</div>
+<div class="p-6">
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase mb-1">Denim</div>
+<h3 class="font-medium text-body-lg text-primary mb-2">Structured Indigo Jacket</h3>
+<span class="text-secondary font-bold">$320.00</span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-4 mt-section-gap">
+<button class="material-symbols-outlined text-primary-fixed-dim">chevron_left</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 rounded-full hover:bg-surface-variant transition-colors font-bold text-on-surface-variant">2</button>
+<button class="w-10 h-10 rounded-full hover:bg-surface-variant transition-colors font-bold text-on-surface-variant">3</button>
+<span class="flex items-center px-2">...</span>
+<button class="w-10 h-10 rounded-full hover:bg-surface-variant transition-colors font-bold text-on-surface-variant">8</button>
+</div>
+<button class="material-symbols-outlined text-primary">chevron_right</button>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="bg-primary-container text-on-primary-container py-section-gap px-margin-mobile md:px-margin-desktop text-center">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-surface mb-4">Stay in Style</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant mb-12">Sign up for early access to our seasonal collections and editorial updates.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-transparent border-b border-outline-variant py-4 text-surface placeholder:text-on-primary-fixed-variant focus:outline-none focus:border-secondary transition-colors" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-on-primary px-12 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container full-width">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-lg text-headline-lg text-on-primary tracking-widest uppercase mb-8">YOUR STYLE</div>
+<p class="text-on-primary-container opacity-80 font-body-md text-body-md">Luxury redefined through minimalist precision and editorial clarity.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2">Shop</h4>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">New Arrivals</a>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Collections</a>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Men's Wear</a>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Women's Wear</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2">Support</h4>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-on-primary-container opacity-80 font-label-xs text-label-xs hover:text-secondary-fixed transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2">Social</h4>
+<div class="flex gap-6">
+<a class="text-on-primary hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-primary hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-on-primary hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-8 border-t border-white/10 text-center">
+<p class="text-on-primary-container opacity-60 font-label-xs text-label-xs">© 2024 YOUR STYLE. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions for adding to cart
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const originalText = e.target.innerText;
+                e.target.innerText = 'Added to Cart';
+                e.target.classList.remove('bg-primary');
+                e.target.classList.add('bg-secondary');
+                
+                setTimeout(() => {
+                    e.target.innerText = originalText;
+                    e.target.classList.remove('bg-secondary');
+                    e.target.classList.add('bg-primary');
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

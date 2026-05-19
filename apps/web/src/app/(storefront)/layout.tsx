@@ -1,0 +1,20 @@
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import CartDrawer from '@/components/cart/CartDrawer';
+
+export default function StorefrontLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <Header />
+      <main className="flex-1 flex flex-col pt-[72px]">
+        {children}
+      </main>
+      <Footer />
+      <CartDrawer />
+    </>
+  );
+}

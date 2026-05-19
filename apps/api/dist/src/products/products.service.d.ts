@@ -1,0 +1,105 @@
+import { CreateProductDto } from './dto/create-product.dto';
+import { UpdateProductDto } from './dto/update-product.dto';
+import { PrismaService } from '../prisma/prisma.service';
+export declare class ProductsService {
+    private readonly prisma;
+    constructor(prisma: PrismaService);
+    create(createProductDto: CreateProductDto): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    findAll(filters?: {
+        search?: string;
+        category?: string;
+        size?: string;
+        color?: string;
+        minPrice?: number;
+        maxPrice?: number;
+        sortBy?: string;
+    }): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }[]>;
+    findOne(id: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    findBySlug(slug: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    update(id: string, updateProductDto: UpdateProductDto): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    remove(id: string): Promise<{
+        id: string;
+        slug: string;
+        name: string;
+        description: string;
+        price: number;
+        salePrice: number | null;
+        stock: number;
+        category: string;
+        images: string[];
+        colors: string[];
+        sizes: string[];
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+}

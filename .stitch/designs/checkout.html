@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ESTHÉTIQUE | Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#ebe7e6",
+                      "on-tertiary-fixed-variant": "#504534",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#e8e1db",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#87837d",
+                      "outline": "#7b766e",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#000000",
+                      "tertiary-fixed": "#f2e0c8",
+                      "surface-variant": "#e6e2e0",
+                      "tertiary-fixed-dim": "#d5c4ad",
+                      "surface-tint": "#615e59",
+                      "outline-variant": "#ccc6bc",
+                      "on-secondary-container": "#785c27",
+                      "secondary-fixed": "#ffdea7",
+                      "on-secondary-fixed-variant": "#5b430e",
+                      "secondary-container": "#fed896",
+                      "primary-fixed-dim": "#cbc6bf",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#90826e",
+                      "inverse-on-surface": "#f4f0ee",
+                      "surface-container-low": "#f7f3f1",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#ddd9d8",
+                      "surface-bright": "#fdf8f7",
+                      "on-primary-fixed-variant": "#494641",
+                      "surface-container-highest": "#e6e2e0",
+                      "surface-container": "#f1edeb",
+                      "on-primary-fixed": "#1d1b17",
+                      "on-error-container": "#93000a",
+                      "background": "#fdf8f7",
+                      "secondary": "#755a24",
+                      "on-tertiary-fixed": "#231a0c",
+                      "on-error": "#ffffff",
+                      "primary": "#000000",
+                      "on-background": "#1c1b1b",
+                      "on-surface-variant": "#4a463f",
+                      "on-secondary-fixed": "#271900",
+                      "inverse-surface": "#31302f",
+                      "tertiary-container": "#231a0c",
+                      "surface": "#fdf8f7",
+                      "on-surface": "#1c1b1b",
+                      "inverse-primary": "#cbc6bf",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#e6c181",
+                      "primary-container": "#1d1b17"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "unit": "4px",
+                      "section-gap": "120px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Outfit"],
+                      "label-xs": ["Outfit"],
+                      "body-md": ["Outfit"],
+                      "display-lg-mobile": ["Outfit"],
+                      "body-lg": ["Outfit"],
+                      "headline-lg": ["Outfit"],
+                      "label-sm": ["Outfit"],
+                      "display-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-xs": ["10px", {"lineHeight": "1.4", "letterSpacing": "0.2em", "fontWeight": "300"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "300"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fdf8f7; /* Warm Ivory fallback */
+            color: #1c1b1b; /* Deep Espresso fallback */
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .whisper-shadow {
+            box-shadow: 0 20px 40px rgba(26, 24, 20, 0.03);
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #755a24 ! from config secondary;
+            --tw-ring-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<a class="text-on-surface-variant font-label-sm uppercase tracking-widest hover:text-secondary transition-colors duration-300 opacity-70 transition-opacity" href="#">Back to Cart</a>
+</div>
+<div class="font-display-lg text-[24px] tracking-[0.2em] uppercase text-primary dark:text-primary-fixed">
+                ESTHÉTIQUE
+            </div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:inline">Secure Checkout</span>
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="lock">lock</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mt-8 mb-section-gap">
+<!-- Progress Bar -->
+<nav class="flex items-center justify-center space-x-8 mb-16">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-widest">1. Shipping</span>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full border border-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">2. Payment</span>
+</div>
+<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full border border-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">3. Review</span>
+</div>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-gutter md:gap-16 items-start">
+<!-- Left Column: Shipping Form -->
+<section class="space-y-12">
+<header>
+<h1 class="font-label-sm text-label-sm tracking-[0.2em] text-on-surface uppercase mb-8">Shipping Address</h1>
+</header>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" placeholder="email@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">First Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">Last Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">Street Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">Apartment, suite, etc. (optional)</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">City</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">State</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">ZIP Code</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md" type="text"/>
+</div>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-xs text-label-xs uppercase text-outline block">Country</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-md appearance-none">
+<option>United States</option>
+<option>United Kingdom</option>
+<option>France</option>
+<option>Japan</option>
+</select>
+</div>
+</div>
+<div class="pt-8">
+<h2 class="font-label-sm text-label-sm tracking-[0.2em] text-on-surface uppercase mb-6">Shipping Method</h2>
+<div class="space-y-4">
+<!-- Selected Option -->
+<label class="flex items-center justify-between p-6 bg-surface border-2 border-primary rounded-lg cursor-pointer whisper-shadow transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="shipping" type="radio"/>
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Standard Delivery</p>
+<p class="font-label-xs text-label-xs text-outline uppercase">3-5 Business Days</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase">Free</span>
+</label>
+<!-- Express Option -->
+<label class="flex items-center justify-between p-6 bg-surface-container-low border border-transparent rounded-lg cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-4">
+<input class="text-primary focus:ring-primary h-4 w-4" name="shipping" type="radio"/>
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Express Delivery</p>
+<p class="font-label-xs text-label-xs text-outline uppercase">1-2 Business Days</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase">$15.00</span>
+</label>
+<!-- Next Day Option -->
+<label class="flex items-center justify-between p-6 bg-surface-container-low border border-transparent rounded-lg cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-4">
+<input class="text-primary focus:ring-primary h-4 w-4" name="shipping" type="radio"/>
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Next Day Arrival</p>
+<p class="font-label-xs text-label-xs text-outline uppercase">Order by 2pm EST</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase">$25.00</span>
+</label>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-6 rounded-lg font-label-sm text-label-sm uppercase tracking-[0.2em] hover:bg-secondary transition-colors duration-500 mt-8" type="button">
+                        Continue to Payment
+                    </button>
+</form>
+</section>
+<!-- Right Column: Sticky Summary -->
+<aside class="sticky top-32 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl whisper-shadow">
+<h2 class="font-label-sm text-label-sm tracking-[0.2em] text-on-surface uppercase mb-8">Order Summary</h2>
+<!-- Cart Items -->
+<div class="space-y-6 mb-8">
+<div class="flex gap-4">
+<img alt="Luxury wool blazer" class="w-16 h-20 object-cover rounded shadow-sm" data-alt="A close-up high-fashion photograph of a luxury charcoal wool blazer's lapel. The image emphasizes the rich, architectural weave of the fabric and the precision of the tailoring. Soft, cinematic studio lighting highlights the texture and depth of the material against a neutral, minimalist background. The aesthetic is sophisticated and timeless, reflecting a high-end editorial look." src="https://lh3.googleusercontent.com/aida/ADBb0ui5utB8vkpqSIDMTmdm5uTIjzlZbRDGuK8Byb9NlaTW6vdkIhq9CVoZ02UINlmra25rNFbIuG4qiYF-sr9_8L2dOHSbqf4muOz0-EqC8cNn-2mPz0arNYVSDtGID5PgmG_55rS44dBX3kotOlOWJCPl6c5EMOrOvn_QpOdL8TNTIQeysl9MseXCh9dEP7ObBesR3ql3s4uxjAxZ8AedSNHH_wJEMndPr6mukJOoZQ5QA6zOZtw-9Af2qA"/>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm uppercase tracking-tight">Structured Wool Blazer</p>
+<p class="font-label-xs text-label-xs text-outline uppercase">Size 40 | Charcoal</p>
+<p class="font-label-sm text-label-sm mt-1">$840.00</p>
+</div>
+</div>
+<div class="flex gap-4">
+<img alt="Tailored trousers" class="w-16 h-20 object-cover rounded shadow-sm" data-alt="An editorial product photograph of high-waisted, impeccably tailored trousers made from premium charcoal wool. The garment is captured in a minimalist studio setting with soft, diffused lighting that showcases the elegant drape and fine textile quality. The composition is clean and focused, reflecting a quiet luxury aesthetic with a palette of deep grays and subtle warm undertones." src="https://lh3.googleusercontent.com/aida/ADBb0uh7oATmvqq3ttDk4IlXSya9lRX4d19Tmlokrq5p9AEBp69yipVUNAOwaghQ7UODKEixIFjkinM8v7Qi6NKNjzf1REaUOr2FBxOzcFnCeb_g0Edws44GeejQIZw0nBh0ijObDJ8Lk62lh2XwpuRY_CJIrCF64KoKFudKCU0P1w19OTVfvSNV1JPZllokXsaGticLSzUIv4-s1OvBRtD6PAtAQTbHkv656AzsEXMrQUojnbRMEgeXOENUnQ"/>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm uppercase tracking-tight">Classic Tailored Trouser</p>
+<p class="font-label-xs text-label-xs text-outline uppercase">Size 38 | Charcoal</p>
+<p class="font-label-sm text-label-sm mt-1">$420.00</p>
+</div>
+</div>
+<div class="flex gap-4">
+<img alt="Cashmere scarf" class="w-16 h-20 object-cover rounded shadow-sm" data-alt="A luxurious product shot of a heavy cashmere scarf in a soft, neutral stone color. The fabric is artfully draped to show off its incredibly soft, tactile texture and thick weave. The image is bathed in warm, natural studio light that enhances the creamy tones of the cashmere. This high-end editorial visual communicates warmth, luxury, and meticulous material craftsmanship." src="https://lh3.googleusercontent.com/aida/ADBb0uhyYxe_vaforMdTGOrtp2eCKo_IDZdxgscSd0a5JMReapTjp-ZJ-BxxjiHPv4W6kiTMkjouhpCJduPdh5aAGaH2syE4n4tu0KmaHXmVR19DJ4ceZsAq3RimxVh-AW9GPejClIX_DJ371FN7pCSKCJZ3xvrFis4sKC0zigT2ERClIlhQS0Y0NbIfeoPD6zPGL9XCOUqyzraTZiCnHMydK3FJ-aEys7_mJ3LR9tRratPtKAwLqjVNK9wYQgE"/>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm uppercase tracking-tight">Heavy Cashmere Scarf</p>
+<p class="font-label-xs text-label-xs text-outline uppercase">Stone</p>
+<p class="font-label-sm text-label-sm mt-1">$200.00</p>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 pt-8 space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label-xs text-label-xs uppercase text-outline">Subtotal</span>
+<span class="font-label-sm text-label-sm">$1,460.00</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="font-label-xs text-label-xs uppercase">Discount (WELCOME10)</span>
+<span class="font-label-sm text-label-sm">-$146.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-xs text-label-xs uppercase text-outline">Shipping</span>
+<span class="font-label-sm text-label-sm">Free</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-xs text-label-xs uppercase text-outline">Tax</span>
+<span class="font-label-sm text-label-sm">$108.00</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/20">
+<span class="font-headline-md text-headline-md uppercase">Total</span>
+<span class="font-headline-md text-headline-md">$1,422.00</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 border border-outline-variant/20 rounded-lg">
+<span class="material-symbols-outlined text-outline" data-icon="lock_open">lock_open</span>
+<div>
+<p class="font-label-xs text-label-xs uppercase font-bold">Secure Data Transmission</p>
+<p class="font-label-xs text-[9px] text-outline leading-tight mt-1">YOUR PAYMENT INFORMATION IS PROCESSED SECURELY. WE DO NOT STORE CREDIT CARD DETAILS NOR HAVE ACCESS TO YOUR CREDIT CARD INFORMATION.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface border-t border-outline-variant/20 full-width bottom">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 mt-section-gap max-w-7xl mx-auto">
+<div class="font-label-xs text-label-xs uppercase tracking-[0.1em] text-on-surface-variant mb-6 md:mb-0">
+                © 2024 ESTHÉTIQUE ATELIER. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-8">
+<a class="font-label-xs text-label-xs uppercase tracking-[0.1em] text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-label-xs text-label-xs uppercase tracking-[0.1em] text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-label-xs text-label-xs uppercase tracking-[0.1em] text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for form inputs
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').classList.replace('text-outline', 'text-secondary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').classList.replace('text-secondary', 'text-outline');
+            });
+        });
+
+        // Simple Radio Toggle Visual Enhancement
+        const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+        shippingOptions.forEach(option => {
+            option.addEventListener('change', (e) => {
+                shippingOptions.forEach(opt => {
+                    const parent = opt.closest('label');
+                    parent.classList.remove('border-primary', 'bg-surface');
+                    parent.classList.add('border-transparent', 'bg-surface-container-low');
+                });
+                if (e.target.checked) {
+                    const activeParent = e.target.closest('label');
+                    activeParent.classList.remove('border-transparent', 'bg-surface-container-low');
+                    activeParent.classList.add('border-primary', 'bg-surface');
+                }
+            });
+        });
+    </script>
+</body></html>
